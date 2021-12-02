@@ -45,6 +45,12 @@ void printvisit(int k, int length, int *visited, int key) {
 
     FILE *fp2 = fopen("answer.txt", "w");
 
+    if (!fp2) {
+        system("touch answer.txt");
+        fp2 = fopen("answer.txt", "w");
+    }
+    
+
     if (key == 1) {
         fprintf(fp2, "%s\n%s\n", "Обход по графу", "1-Можно попасть   0-Нельзя");
         for (int i = k; i < length; i++) {

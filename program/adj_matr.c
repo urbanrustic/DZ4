@@ -5,6 +5,14 @@
 void adjacency(void) {
 
     printf("%s\n", "Формат ввода: между числами пробел, в конце каждой строки должен быть Enter, даже в последней");
+
+    FILE *fp = fopen("test.txt", "r");
+    if (!fp) {
+        system("touch test.txt");
+        fp = fopen("test.txt", "r");
+    }
+    fclose(fp);
+    
     delay(8);
     system("wslview test.txt");
 

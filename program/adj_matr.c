@@ -39,7 +39,7 @@ void adjacency(void) {
     while ((c = fgetc(fp1)) != EOF) {
     
         if (!isdigit(c) && (c != ' ') && (c != '\r') && (c != '\n')) {
-            printf("%s\n", "Буквы не должны присутствовать в матрице");
+            printf("%s\n", "!!!Буквы не должны присутствовать в матрице");
             free(ar);
             fclose(fp1);
             return;
@@ -51,7 +51,7 @@ void adjacency(void) {
         }
         //Проверка на правильность ввода матрицы
         if (((c == ' ') && fl1) || ((c == '\n') && fl2)) {
-            printf("%s\n", "Между цифрами больше одного пробела или одного переноса строки пробела");
+            printf("%s\n", "!!!Между цифрами больше одного пробела или одного переноса строки пробела");
             free(ar);
             fclose(fp1);
             return;
@@ -70,7 +70,7 @@ void adjacency(void) {
     }
 
     if (!fl2) {
-        printf("%s\n", "В конце тоже перенос должен быть");
+        printf("%s\n", "!!!В конце тоже перенос должен быть");
         free(ar);
         fclose(fp1);
         return;
@@ -79,7 +79,7 @@ void adjacency(void) {
     fclose(fp1);
 
     int *visited = (int*)malloc((apex+1)*sizeof(int));
-    dfc(0, apex, ar, visited);
+    dfs(0, apex, ar, visited);
     free(ar);
 
     printvisit(0, apex, visited, 0);

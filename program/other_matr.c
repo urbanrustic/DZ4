@@ -47,13 +47,13 @@ void other_view(void) {
         }
         //Проверка на правильный ввод
         if ((c == ' ') || (!isdigit(c) && (c != '\r') && (c != '\n') && (c != '-'))) {
-            printf("%s\n", "Букв и пробелов не должно быть в матрице");
+            printf("%s\n", "!!!Букв и пробелов не должно быть в матрице");
             free(ar);
             fclose(fp1);
             return;
         }
         if (((c == '-') && fl1) || ((c == '\n') && fl2)) {
-            printf("%s\n", "Между цифрами больше одного дефиса или одного переноса строки пробела");
+            printf("%s\n", "!!!Между цифрами больше одного дефиса или одного переноса строки пробела");
             free(ar);
             fclose(fp1);
             return;
@@ -92,7 +92,7 @@ void other_view(void) {
 
     int *visited = (int*)malloc((apex+1)*sizeof(int));
 
-    dfc(apex, apex+1, ar, visited);
+    dfs(apex, apex+1, ar, visited);
     free(ar);
 
     printvisit(1, apex+1, visited, 1);

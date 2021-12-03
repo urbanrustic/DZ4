@@ -6,6 +6,7 @@ void other_view(void) {
 
     printf("%s\n", "Формат ввода: между числами дефис, в конце каждой строки должен быть Enter, даже в последней");
 
+    //Проверка на существование и создание файла
     FILE *fp = fopen("test.txt", "r");
     if (!fp) {
         system("touch test.txt");
@@ -13,7 +14,7 @@ void other_view(void) {
     }
     fclose(fp);
 
-    delay(8);
+    delay(5);
     system("wslview test.txt");
 
     char c;
@@ -34,6 +35,7 @@ void other_view(void) {
     int p_1 = 0, p_2 = 0;
     rewind(fp1);
 
+    //Заполнение массива матрицей
     while ((c = fgetc(fp1)) != EOF) {
         if (p_1 && p_2 && fl1 && fl2) {
             ar[p_1*(apex+1) + p_2] = 1;
@@ -95,7 +97,7 @@ void other_view(void) {
 
     printvisit(1, apex+1, visited, 1);
     
-    delay(5);
+    delay(2);
     free(visited);
     system("wslview answer.txt");    
 }

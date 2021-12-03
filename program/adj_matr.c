@@ -13,7 +13,7 @@ void adjacency(void) {
     }
     fclose(fp);
     
-    delay(8);
+    delay(5);
     system("wslview test.txt");
 
     char c;
@@ -84,7 +84,7 @@ void adjacency(void) {
 
     printvisit(0, apex, visited, 0);
 
-    delay(5);
+    delay(2);
     free(visited);
     system("wslview answer.txt");
 }

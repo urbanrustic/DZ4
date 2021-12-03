@@ -31,7 +31,7 @@ void dfs(int param, int length, int *arr, int *visited) {
 
 <h3 align="center">Структурная схема</h3>
 
-![Untitled Diagram-Page-1](https://user-images.githubusercontent.com/81951508/144552658-c9bcaa0a-1eff-49c4-82ef-55631d9a91ba.jpg)
+<p align="center">![Untitled Diagram-Page-1](https://user-images.githubusercontent.com/81951508/144552658-c9bcaa0a-1eff-49c4-82ef-55631d9a91ba.jpg)</p>
 
 <h2 align="center">Ошибки</h2>
 <p>Все ошибки выводятся в терминале с пометкой "!!!"</p>
